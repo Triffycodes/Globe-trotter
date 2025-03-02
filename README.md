@@ -1,5 +1,5 @@
 # Globetrotter - Interactive Geography Quiz Game
-## Project Link: (https://globe-trotter.adarshshankar.in/)
+### Project Link: (https://globe-trotter-seven.vercel.app/)
 ## 📝 Project Overview
 
 Globetrotter is an interactive web-based geography quiz game that challenges players to identify cities around the world based on clues. Players can test their knowledge, compete with friends, and climb the global leaderboard.
