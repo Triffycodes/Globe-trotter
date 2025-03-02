@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&family=Fredoka:wght@500;600&display=swap');
+
+.landing-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4b5da4 0%, #182262 50%, #01040b 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* World map pattern background */
+.landing-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+
+
+/* Game board design */
+.landing-content {
+  max-width: 500px;
+  width: 90%;
+  background: linear-gradient(135deg, #1c082e, #503fbe);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+ 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 
+              inset 0 0 80px rgba(128, 0, 255, 0.2),
+              0 0 0 8px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  animation: gameStart 0.8s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+@keyframes gameStart {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-3deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+/* Improved 3D globe */
+.globe-container {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  position: relative;
+}
+
+.globe {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #4ea8de 0%, #185adb 35%, #03045e 100%);
+  box-shadow: 0 0 20px rgba(24, 90, 219, 0.6);
+  overflow: hidden;
+}
+
+/* Continents */
+.globe::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800' width='800' height='800'%3E%3Cpath fill='%2390e0ef' fill-opacity='0.5' d='M435 219c10-10 25-11 43-5 34 12 39 62 72 66 47 6 81-61 90-108 4-19 0-47-21-48-21-1-76 32-104 15-40-25-29-73-12-113 9-22 31-58 9-81-37-40-109 40-132 67-29 33-53 74-53 118 0 77 73 118 108 89zm-293 42c12 0 22 15 12 24-14 14-38 15-55 26-15 10-26 28-22 46 3 12 13 22 25 24 12 3 25-3 37 2 16 6 28 24 24 41-4 15-18 26-21 42-4 21 9 41 9 62-1 46-45 82-91 82-50 0-89-35-89-78 0-113 105-272 171-271zm74-260c23 1 38 29 33 49-5 19-22 36-23 56 0 19 14 37 25 52 20 25 23 74-12 85-27 8-37-17-60-20-22-3-40 39-65 41-38 3-55-63-49-91 11-58 72-124 151-172z'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: -50px center;
+  animation: rotateContinents 30s linear infinite;
+}
+
+/* Globe shine */
+.globe::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%);
+}
+
+@keyframes rotateContinents {
+  from { background-position: 0 center; }
+  to { background-position: -800px center; }
+}
+
+/* Game-like title */
+.landing-title {
+  font-family: 'Boogaloo', cursive;
+  font-size: 4rem;
+  color: #FFFFFF;
+  text-shadow: 
+    0 2px 0 #ff9a00,
+    0 4px 0 #ff7400,
+    0 6px 0 #ff4d00,
+    0 8px 15px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  transform: rotate(-2deg);
+}
+
+.landing-subtitle {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.2rem;
+  color: #d1edff;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+/* Game controller input field */
+.username-form {
+  width: 100%;
+  position: relative;
+}
+
+.username-input {
+  width: 80%;
+  padding: 16px 20px;
+  font-size: 1.2rem;
+  font-family: 'Fredoka', sans-serif;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  text-align: center;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2),
+              inset 0 0 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.username-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.username-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4),
+              inset 0 0 15px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+}
+
+/* Game start button */
+.start-button {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: 'Fredoka', sans-serif;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 20px rgba(255, 126, 95, 0.3),
+              inset 0 -4px 0 rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.start-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(255, 126, 95, 0.4),
+              inset 0 -4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.start-button:active {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4),
+              inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.start-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.8s, opacity 0.8s;
+}
+
+.start-button:hover::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.start-button.disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none !important;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.98); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .landing-content {
+    padding: 2rem 1.5rem;
+    width: 95%;
+  }
+  
+  .globe-container {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .landing-title {
+    font-size: 3rem;
+  }
+  
+  .landing-subtitle {
+    font-size: 1rem;
+  }
+  
+  .username-input,
+  .start-button {
+    padding: 14px;
+    font-size: 1.1rem;
+  }
+}
