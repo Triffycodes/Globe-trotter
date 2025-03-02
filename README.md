@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# Globetrotter - Interactive Geography Quiz Game
+## Project Link: (https://globe-trotter.adarshshankar.in/)
+## 📝 Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Globetrotter is an interactive web-based geography quiz game that challenges players to identify cities around the world based on clues. Players can test their knowledge, compete with friends, and climb the global leaderboard.
 
-## Available Scripts
+## ✨ Key Features
 
-In the project directory, you can run:
+- **Interactive Quiz Interface**: Answer geography questions through an engaging game interface
+- **Real-time Feedback**: Get immediate feedback on your answers
+- **Challenge System**: Challenge friends to beat your score
+- **Global Leaderboard**: Compare your performance with players worldwide
+- **Responsive Design**: Play seamlessly across desktop and mobile devices
+- **User Authentication**: Track your progress and high scores over time
 
-### `npm start`
+## 🛠️ Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend
+- React.js
+- React Router for navigation
+- CSS3 with custom animations
+- Canvas API for challenge images
+- Confetti effects for correct answers
+- Responsive design principles
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Backend
+- Node.js
+- Express.js
+- MongoDB for data storage
+- RESTful API architecture
 
-### `npm test`
+## 🏛️ Architecture
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Globetrotter follows a modern client-server architecture:
 
-### `npm run build`
+- **Frontend**: Single Page Application built with React
+- **Backend**: RESTful API built with Express.js
+- **Database**: MongoDB for storing user data, questions, and leaderboards
+- **Authentication**: JWT-based secure authentication
+- **Deployment**: Separated frontend (https://globe-trotter.adarshshankar.in/) and backend deployment in vercel
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Installation and Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
+- Node.js (v14+)
+- npm or yarn
+- MongoDB (local or Atlas)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Backend Setup
+1. Clone the repository
+   ```bash
+   git clone https://github.com/Triffycodes/globetrotter-app.git
+   ```
+2. Install dependencies
+    ```bash
+    npm install
+    ```
+3. Create a .env file with the following variables
+  MONGO_URI=your_mongodb_connection_string
+  PORT=5001
+4. Start the backend server
+    ```bash
+    npm start
+    ```
+5. Frontend Setup
+   npm install
 
-### `npm run eject`
+6. Create a .env file with the following variables
+   REACT_APP_API_BASE_URL=http://localhost:5001
+   
+7. Start the development server 
+   ```bash
+    npm start
+   ```
+8. Open your browser and navigate to http://localhost:3000
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Frontend and Backend Deployment (Vercel)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🎮 How to Play:
+  1. Start: Enter your username on the landing page and click "Start Adventure"
+  2. Quiz: You'll be presented with clues about a city in a specific country
+  3. Answer: Select the correct city from the multiple-choice options
+  4. Score: Earn points for correct answers
+  5. Challenge: After completing a game, challenge a friend to beat your score
+  6. Leaderboard: Check how you rank against other players globally
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## API Endpoints:
+### User Endpoints
+    POST /api/users/register - Register a new user
+    POST /api/users/login - Login existing user
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Game Endpoints
+    GET /api/destinations/random - Get a random destination
+    GET /api/destinations/options - Get multiple choice options
+    GET /api/leaderboard - Get global leaderboard
+    POST /api/scores - Submit a new score
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Challenge Endpoints
+    POST /api/challenges/create - Create a new challenge
+    GET /api/challenges/:id - Get challenge details
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🔮 Future Enhancements
+  1. Additional Question Types: Include map-based questions and image recognition
+  2. Achievement System: Unlock badges and achievements for completing challenges
+  3. Difficulty Levels: Add varying difficulty settings
+  4. Social Sharing: Share your achievements on social media
+  5. Localization: Support for multiple languages
 
-### Analyzing the Bundle Size
+## 👥 Contributors
+  Adarsh Shankar (www.adarshshankar.in)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
